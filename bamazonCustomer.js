@@ -29,8 +29,8 @@ var shoppingCart = function() {
         type: "input",
         message: "What is the ID of the product you like to buy?",
         
-        validate: function(value) {
-            if (isNaN(value) == false) {
+        validate: function(input) {
+            if (isNaN(input) == false) {
                 return true;
             } else {
                 return false;
@@ -40,20 +40,20 @@ var shoppingCart = function() {
         name: "Quantity",
         type: "input",
         message: "How many would you like to buy?",
-        validate: function(value) {
-            if (isNaN(value) == false) {
+        validate: function(input) {
+            if (isNaN(input) == false) {
                     return true;
                 } else {
                     return false;
                 }
             }
-        }]).then(function(answer) {
-            var query = 'SELECT * FROM Products WHERE item_id =' + answer.Quantity;
+        }]).then(function(input) {
+            var query = 'SELECT * FROM Products WHERE item_id=' + input.Quantity;
             connection.query(query, function(err, res) {
-                if (answer.Quantity <= res) {
+                if (input.Quantity <= res) {
                     for (var i = 0; i < res.length; i++) {
                         console.log("We currently have " + res[i].stock_quantity + " " + res[i].product_name + ".");
-                        console.log("Thanks for your order! Your order of "+ answer.Quantity + " " + res[i].product_name + " is now being processed.");
+                        console.log("Thanks for your order! Your order of "+ input.Quantity + " " + res[i].product_name + " is now being processed.");
                     }
                 } else {
                     console.log("Sorry! We don't have enough in stock.");
