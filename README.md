@@ -6,8 +6,12 @@ In this activity, you'll be creating an Amazon-like storefront with the MySQL sk
 
 ## User Flow
 
-![Image of Step 1]
-(/steps/step1.png)
+![Image of Step 1](/steps/step1.png)
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Step 2](/steps/step2.png)
 
+![Image of Step 3](/steps/step3.png)
+
+![Image of Step 4](/steps/step4.png)
+
+![Image of Step 5](/steps/step5.png)
